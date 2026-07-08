@@ -13,6 +13,13 @@ data class LienProfessionnel(
     val url: String
 )
 
+// Un diplome ou une formation, affiche via FormationCard.
+data class Formation(
+    val diplome: String,
+    val etablissement: String,
+    val periode: String
+)
+
 // Donnees completes du profil, remplace les parametres epars de l'ancienne CarteProfil.
 data class ProfilDeveloppeur(
     val nom: String,
@@ -24,7 +31,8 @@ data class ProfilDeveloppeur(
     val telephone: String,
     val localisation: String,
     val disponibilite: String,
-    val liensProfessionnels: List<LienProfessionnel>
+    val liensProfessionnels: List<LienProfessionnel>,
+    val formations: List<Formation>
 )
 
 // Donnees locales reelles (voir CV), simulent une source de donnees pour ce devoir.
@@ -68,6 +76,18 @@ fun profilAhmed(): ProfilDeveloppeur {
             LienProfessionnel(label = "LinkedIn", url = "linkedin.com"),
             LienProfessionnel(label = "GitHub", url = "github.com/DARK-SHAD0W"),
             LienProfessionnel(label = "Portfolio", url = "portfolio")
+        ),
+        formations = listOf(
+            Formation(
+                diplome = "Master Architecture des Logiciels",
+                etablissement = "ESGI, Lyon",
+                periode = "2025-2027"
+            ),
+            Formation(
+                diplome = "Licence Informatique",
+                etablissement = "Université Clermont Auvergne, Aubière",
+                periode = "2021-2025"
+            )
         )
     )
 }

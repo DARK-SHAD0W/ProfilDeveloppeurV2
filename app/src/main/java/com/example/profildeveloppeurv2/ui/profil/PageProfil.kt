@@ -52,6 +52,20 @@ fun PageProfil(
         }
 
         item {
+            Text(
+                text = "Formation",
+                style = MaterialTheme.typography.titleMedium
+            )
+        }
+
+        items(
+            items = profil.formations,
+            key = { formation -> formation.diplome }
+        ) { formation ->
+            FormationCard(formation = formation)
+        }
+
+        item {
             ZoneContact(
                 email = profil.email,
                 telephone = profil.telephone,
