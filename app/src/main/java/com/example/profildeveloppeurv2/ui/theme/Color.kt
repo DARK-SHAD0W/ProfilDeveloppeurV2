@@ -46,3 +46,7 @@ val OutlineVariantSombre = Color(0xFF414944)
 val FondCarte = Color(0xFFDBDDDE)
 val FondCompetence = Color(0xFFD3E8D0)
 val FondBadgeDisponibilite = Color(0xFFE6D8B8)
+
+// Jaune des etoiles de notation (niveau de langue) : couleur fixe, comme dans le TP4,
+// pas liee au theme clair/sombre puisqu'une etoile jaune reste lisible dans les deux cas.
+val EtoileJaune = Color(0xFFFFC107)

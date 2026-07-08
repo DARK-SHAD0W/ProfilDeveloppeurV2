@@ -66,6 +66,20 @@ fun PageProfil(
         }
 
         item {
+            Text(
+                text = "Langues",
+                style = MaterialTheme.typography.titleMedium
+            )
+        }
+
+        items(
+            items = profil.langues,
+            key = { langue -> langue.nom }
+        ) { langue ->
+            LangueItem(langue = langue)
+        }
+
+        item {
             ZoneContact(
                 email = profil.email,
                 telephone = profil.telephone,

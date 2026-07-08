@@ -20,6 +20,13 @@ data class Formation(
     val periode: String
 )
 
+// Une langue et son niveau (sur 5), affiche via LangueItem avec des etoiles.
+data class Langue(
+    val nom: String,
+    val niveauLabel: String,
+    val niveauEtoiles: Int
+)
+
 // Donnees completes du profil, remplace les parametres epars de l'ancienne CarteProfil.
 // prenom et nom sont separes pour pouvoir en tirer les initiales de l'avatar (AvatarAvecBadge).
 data class ProfilDeveloppeur(
@@ -34,7 +41,8 @@ data class ProfilDeveloppeur(
     val localisation: String,
     val disponibilite: String,
     val liensProfessionnels: List<LienProfessionnel>,
-    val formations: List<Formation>
+    val formations: List<Formation>,
+    val langues: List<Langue>
 )
 
 // Donnees locales reelles (voir CV), simulent une source de donnees pour ce devoir.
@@ -91,6 +99,11 @@ fun profilAhmed(): ProfilDeveloppeur {
                 etablissement = "Université Clermont Auvergne, Aubière",
                 periode = "2021-2025"
             )
+        ),
+        langues = listOf(
+            Langue(nom = "Français", niveauLabel = "Bilingue", niveauEtoiles = 5),
+            Langue(nom = "Anglais", niveauLabel = "Courant (TOEIC C1)", niveauEtoiles = 4),
+            Langue(nom = "Arabe", niveauLabel = "Langue maternelle", niveauEtoiles = 5)
         )
     )
 }
@@ -136,6 +149,11 @@ fun profilIrina(): ProfilDeveloppeur {
                 etablissement = "Université Paris-Saclay",
                 periode = "2018-2020"
             )
+        ),
+        langues = listOf(
+            Langue(nom = "Russe", niveauLabel = "Langue maternelle", niveauEtoiles = 5),
+            Langue(nom = "Anglais", niveauLabel = "Courant", niveauEtoiles = 4),
+            Langue(nom = "Français", niveauLabel = "Intermédiaire", niveauEtoiles = 3)
         )
     )
 }
