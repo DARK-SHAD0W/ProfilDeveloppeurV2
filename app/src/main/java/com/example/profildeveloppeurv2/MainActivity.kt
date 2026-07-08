@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.profildeveloppeurv2.ui.profil.PageProfil
 import com.example.profildeveloppeurv2.ui.profil.profilAhmed
+import com.example.profildeveloppeurv2.ui.profil.profilIrina
 import com.example.profildeveloppeurv2.ui.theme.ProfilDeveloppeurV2Theme
 
 // Active le thème puis affiche PageProfil dans un Scaffold.
@@ -24,6 +25,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     PageProfil(
                         profil = profilAhmed(),
+                        //pour le deuxieme preview : profil = profilIrina(),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

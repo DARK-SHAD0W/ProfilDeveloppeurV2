@@ -40,6 +40,5 @@ val OnSurfaceVariantSombre = Color(0xFFC1C9C4)
 // Fonds clairs utilisés directement sur des Surface, un par composable,
 // pour que chaque section de la fiche soit visuellement distincte.
 val FondCarte = Color(0xFFDBDDDE)
-val FondEntete = Color(0xFFC9DDEF)
 val FondCompetence = Color(0xFFD3E8D0)
 val FondBadgeDisponibilite = Color(0xFFE6D8B8)
