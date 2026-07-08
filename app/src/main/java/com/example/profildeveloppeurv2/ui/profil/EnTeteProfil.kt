@@ -19,10 +19,13 @@ fun EnTeteProfil(
         modifier = modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        AvatarAvecBadge(statutActif = true)
+        AvatarAvecBadge(
+            initiales = "${profil.prenom.first()}${profil.nom.first()}".uppercase(),
+            statutActif = true
+        )
         Spacer(modifier = Modifier.width(12.dp))
         IdentiteDeveloppeur(
-            nom = profil.nom,
+            nom = "${profil.prenom} ${profil.nom}",
             role = profil.role,
             modifier = Modifier.weight(1f)
         )

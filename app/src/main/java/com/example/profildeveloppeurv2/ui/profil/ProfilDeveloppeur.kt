@@ -21,7 +21,9 @@ data class Formation(
 )
 
 // Donnees completes du profil, remplace les parametres epars de l'ancienne CarteProfil.
+// prenom et nom sont separes pour pouvoir en tirer les initiales de l'avatar (AvatarAvecBadge).
 data class ProfilDeveloppeur(
+    val prenom: String,
     val nom: String,
     val role: String,
     val description: String,
@@ -38,8 +40,9 @@ data class ProfilDeveloppeur(
 // Donnees locales reelles (voir CV), simulent une source de donnees pour ce devoir.
 fun profilAhmed(): ProfilDeveloppeur {
     return ProfilDeveloppeur(
-        nom = "Ahmed Yahya Letaief",
-        role = "Développeur Fullstack — Vue.js / Django · M1 Architecture Logicielle",
+        prenom = "Ahmed",
+        nom = "Letaief",
+        role = "Développeur Fullstack, Vue.js / Django, M1 Architecture Logicielle",
         description = "Développeur fullstack en alternance chez SOCOTEC.IO, actuellement en " +
             "Master Architecture des Logiciels à l'ESGI Lyon. Passionné par l'IA, la robotique " +
             "et le développement logiciel.",
@@ -87,6 +90,51 @@ fun profilAhmed(): ProfilDeveloppeur {
                 diplome = "Licence Informatique",
                 etablissement = "Université Clermont Auvergne, Aubière",
                 periode = "2021-2025"
+            )
+        )
+    )
+}
+
+// Second profil, fictif, pour montrer que l'ecran s'adapte a des donnees differentes
+// (comme les deux previews de l'ancienne CarteProfil).
+fun profilSofia(): ProfilDeveloppeur {
+    return ProfilDeveloppeur(
+        prenom = "Sofia",
+        nom = "Martin",
+        role = "Développeuse Full-Stack, freelance",
+        description = "Développeuse freelance depuis 3 ans, à l'aise aussi bien côté serveur " +
+            "que sur les interfaces web et mobiles. Disponible pour de nouvelles missions.",
+        competences = listOf(
+            "Kotlin", "Node.js", "PostgreSQL", "React", "AWS", "GraphQL"
+        ),
+        experiences = listOf(
+            ExperienceProjet(
+                titre = "Développeuse freelance",
+                periode = "Indépendante · 2023-Présent",
+                description = "Développement d'applications web et mobiles pour plusieurs " +
+                    "clients, de la conception à la mise en production."
+            ),
+            ExperienceProjet(
+                titre = "Développeuse Backend",
+                periode = "StartupCo · 2021-2023",
+                description = "Conception d'une API GraphQL et migration de l'infrastructure " +
+                    "vers AWS pour une application SaaS."
+            )
+        ),
+        email = "sofia.martin@example.com",
+        telephone = "+33 6 12 34 56 78",
+        localisation = "Paris, France",
+        disponibilite = "Non disponible actuellement",
+        liensProfessionnels = listOf(
+            LienProfessionnel(label = "LinkedIn", url = "linkedin.com"),
+            LienProfessionnel(label = "GitHub", url = "github.com"),
+            LienProfessionnel(label = "Portfolio", url = "portfolio")
+        ),
+        formations = listOf(
+            Formation(
+                diplome = "Master Informatique",
+                etablissement = "Université Paris-Saclay",
+                periode = "2018-2020"
             )
         )
     )

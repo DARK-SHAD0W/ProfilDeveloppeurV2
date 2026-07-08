@@ -1,6 +1,5 @@
 package com.example.profildeveloppeurv2.ui.profil
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -10,29 +9,35 @@ import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
-// Avatar (image placeholder) avec un badge de statut superpose, via Box + align.
+// Avatar en initiales (cercle colore + texte) avec un badge de statut superpose, via Box + align.
+// On genere l'avatar plutot que d'utiliser une photo : ca reste local, pas besoin d'image
+// a stocker dans le projet, et ca s'adapte a n'importe quel profil.
 @Composable
 fun AvatarAvecBadge(
+    initiales: String,
     statutActif: Boolean,
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier) {
-        Image(
-            painter = painterResource(android.R.drawable.ic_menu_gallery),
-            contentDescription = "Photo de profil",
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(72.dp)
-                .clip(CircleShape)
-        )
+        Surface(
+            shape = CircleShape,
+            color = MaterialTheme.colorScheme.primaryContainer,
+            modifier = Modifier.size(72.dp)
+        ) {
+            Box(contentAlignment = Alignment.Center) {
+                Text(
+                    text = initiales,
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            }
+        }
         if (statutActif) {
             Surface(
                 shape = CircleShape,
