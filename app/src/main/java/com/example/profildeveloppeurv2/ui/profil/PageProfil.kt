@@ -1,36 +1,54 @@
 package com.example.profildeveloppeurv2.ui.profil
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-// Écran principal : fournit les données et le padding externe (16.dp) de la fiche,
-// c'est-à-dire l'espace que l'écran, en tant que parent, laisse autour de la carte.
+// Écran principal : assemble toutes les sections du profil dans une seule LazyColumn.
 @Composable
-fun PageProfil(modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(16.dp)
+fun PageProfil(
+    profil: ProfilDeveloppeur,
+    modifier: Modifier = Modifier
+) {
+    LazyColumn(
+        modifier = modifier.fillMaxSize(),
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        CarteProfil(
-            nom = "Ahmed",
-            role = "Développeur Android",
-            description = "Étudiant en informatique, actuellement en train d'apprendre " +
-                "Jetpack Compose pour créer des interfaces Android modernes.",
-            competences = listOf("Kotlin", "Jetpack Compose", "Git"),
-            disponibilite = "Recherche de stage",
-            texteAction = "Contacter",
-            onDisponibiliteClick = {
-                // Callback vide : signale l'événement sans logique applicative,
-                // hors du périmètre de ce devoir.
-            },
-            onContacterClick = {
-                // Callback vide, même raison.
-            }
-        )
+        item {
+            EnTeteProfil(profil = profil)
+        }
+
+        item {
+            Text(
+                text = profil.description,
+                style = MaterialTheme.typography.bodyMedium
+            )
+        }
+
+        item {
+            CompetencesSection(competences = profil.competences)
+        }
+
+        item {
+            Text(
+                text = "Expériences",
+                style = MaterialTheme.typography.titleMedium
+            )
+        }
+
+        items(
+            items = profil.experiences,
+            key = { experience -> experience.titre }
+        ) { experience ->
+            ProjectCard(experience = experience)
+        }
     }
 }
