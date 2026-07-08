@@ -41,12 +41,6 @@ val OnSurfaceVariantSombre = Color(0xFFC1C9C4)
 val OutlineSombre = Color(0xFF8B938D)
 val OutlineVariantSombre = Color(0xFF414944)
 
-// Fonds clairs utilisés directement sur des Surface, un par composable,
-// pour que chaque section de la fiche soit visuellement distincte.
-val FondCarte = Color(0xFFDBDDDE)
-val FondCompetence = Color(0xFFD3E8D0)
-val FondBadgeDisponibilite = Color(0xFFE6D8B8)
-
 // Jaune des etoiles de notation (niveau de langue) : couleur fixe, comme dans le TP4,
 // pas liee au theme clair/sombre puisqu'une etoile jaune reste lisible dans les deux cas.
 val EtoileJaune = Color(0xFFFFC107)
