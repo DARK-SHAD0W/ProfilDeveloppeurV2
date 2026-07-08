@@ -41,6 +41,12 @@ Deux `LazyRow` gèrent les collections horizontales : les compétences (`Compete
 `LienProfessionnelChip` par lien). Le format horizontal évite de prendre trop de hauteur pour des
 éléments courts.
 
+## Langues
+
+Chaque langue est affichée avec son niveau sous forme d'étoiles (`NotationEtoiles`, `Icon` jaune,
+même principe que la note produit du TP4). Les données viennent du CV : français bilingue, anglais
+courant (TOEIC C1), arabe langue maternelle.
+
 ## Thème
 
 Le thème (`ProfilDeveloppeurV2Theme`) personnalise les trois piliers de Material 3 :
@@ -78,6 +84,7 @@ app/src/main/java/com/example/profildeveloppeurv2/
     │   ├── CompetencesSection.kt       # CompetenceChip + LazyRow
     │   ├── ProjectCard.kt              # carte réutilisable : expérience / projet
     │   ├── FormationCard.kt            # carte réutilisable : diplôme / formation
+    │   ├── LangueItem.kt               # NotationEtoiles + niveau de langue
     │   ├── ZoneContact.kt              # OutlinedTextField en lecture seule
     │   ├── LiensProfessionnelsSection.kt   # LienProfessionnelChip + LazyRow
     │   ├── ActionPrincipale.kt         # bouton d'action principal
