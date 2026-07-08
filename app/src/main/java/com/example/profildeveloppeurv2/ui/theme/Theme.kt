@@ -12,27 +12,35 @@ import androidx.compose.ui.unit.dp
 private val LightColorScheme = lightColorScheme(
     primary = PrimaireClair,
     onPrimary = OnPrimaireClair,
+    primaryContainer = PrimaireContainerClair,
+    onPrimaryContainer = OnPrimaireContainerClair,
     secondary = SecondaireClair,
     onSecondary = OnSecondaireClair,
-    tertiary = TertiaireClair,
-    onTertiary = OnTertiaireClair,
+    secondaryContainer = SecondaireContainerClair,
+    onSecondaryContainer = OnSecondaireContainerClair,
     background = FondClair,
     onBackground = OnFondClair,
     surface = SurfaceClaire,
-    onSurface = OnSurfaceClaire
+    onSurface = OnSurfaceClaire,
+    surfaceVariant = SurfaceVariantClaire,
+    onSurfaceVariant = OnSurfaceVariantClaire
 )
 
 private val DarkColorScheme = darkColorScheme(
     primary = PrimaireSombre,
     onPrimary = OnPrimaireSombre,
+    primaryContainer = PrimaireContainerSombre,
+    onPrimaryContainer = OnPrimaireContainerSombre,
     secondary = SecondaireSombre,
     onSecondary = OnSecondaireSombre,
-    tertiary = TertiaireSombre,
-    onTertiary = OnTertiaireSombre,
+    secondaryContainer = SecondaireContainerSombre,
+    onSecondaryContainer = OnSecondaireContainerSombre,
     background = FondSombre,
     onBackground = OnFondSombre,
     surface = SurfaceSombre,
-    onSurface = OnSurfaceSombre
+    onSurface = OnSurfaceSombre,
+    surfaceVariant = SurfaceVariantSombre,
+    onSurfaceVariant = OnSurfaceVariantSombre
 )
 
 private val ProfilShapes = Shapes(
