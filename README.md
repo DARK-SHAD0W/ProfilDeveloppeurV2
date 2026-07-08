@@ -1,15 +1,18 @@
 # Profil Développeur V2
 
-Version améliorée de l'application « Profil développeur », construite avec Jetpack Compose. Ce
-projet reprend et fait évoluer [`Compose-Profil-Developpeur`](https://github.com/DARK-SHAD0W/Compose-Profil-Developpeur)
-(le premier devoir, laissé intact pour sa propre notation) dans un nouveau dépôt. L'objectif était
-de réutiliser les notions du chapitre Compose UI : composants fondamentaux, layouts, listes
-modernes, cartes réutilisables, Material Design 3 et thème clair/sombre.
+Devoir d'amélioration de l'application « Profil développeur » en Jetpack Compose. Ce projet reprend
+[`Compose-Profil-Developpeur`](https://github.com/DARK-SHAD0W/Compose-Profil-Developpeur) (le
+premier devoir, qu'on ne touche plus puisqu'il garde sa propre note) et le fait évoluer dans un
+nouveau dépôt, en réutilisant les notions du chapitre Compose UI : composants fondamentaux,
+layouts, listes modernes, cartes réutilisables, Material Design 3, thème clair/sombre.
 
-Le profil affiché est celui d'Ahmed Yahya Letaief, développeur fullstack en alternance chez
-SOCOTEC.IO et étudiant en Master Architecture des Logiciels à l'ESGI Lyon. Les données sont réelles
-mais restent locales : pas d'appel réseau, pas de base de données, tout est écrit directement dans
-le code Kotlin.
+L'écran affiche par défaut le profil d'Ahmed Yahya Letaief (développeur fullstack en alternance
+chez SOCOTEC.IO, étudiant en Master Architecture des Logiciels à l'ESGI Lyon), avec des vraies
+données tirées de son CV. Un deuxième profil fictif, Irina Karlovna, existe aussi dans le code
+(`profilIrina()`) pour montrer que les composables affichent n'importe quel profil sans être
+modifiés : il suffit de changer les données passées en paramètre. Dans les deux cas, tout reste
+local, pas d'appel réseau ni de base de données, les données sont écrites directement dans le code
+Kotlin.
 
 ## Composants Compose fondamentaux
 
