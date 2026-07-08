@@ -97,20 +97,33 @@ app/src/main/java/com/example/profildeveloppeurv2/
 
 ## Aperçu
 
-Quatre captures, une par preview : les deux profils (Ahmed, Irina), chacun en thème clair et sombre.
+### L'écran complet (du haut vers le bas)
 
-### Ahmed
+Le contenu dépasse la hauteur d'un écran de téléphone, d'où la `LazyColumn`. Ces trois captures
+mises bout à bout montrent l'écran d'Ahmed du haut jusqu'en bas.
+
+| Haut de l'écran | Milieu | Bas de l'écran |
+|---|---|---|
+| ![Haut du profil d'Ahmed](capture/ProfilPage1.png) | ![Milieu du profil d'Ahmed](capture/ProfilPage2.png) | ![Bas du profil d'Ahmed](capture/ProfilPage3.png) |
+
+### Deux profils différents
+
+<p align="center">
+  <img src="capture/ProfilAhmedClair.png" alt="Profil d'Ahmed" width="300">
+  <img src="capture/ProfilIrinaClair.png" alt="Profil d'Irina" width="300">
+</p>
+
+Ce sont exactement les mêmes composables (`PageProfil`, `EnTeteProfil`, `ProjectCard`...) qui
+affichent deux personnes complètement différentes. Rien n'est codé en dur : chaque composable
+reçoit ses données en paramètre (`profil: ProfilDeveloppeur`, `experience: ExperienceProjet`...),
+donc changer `profilAhmed()` en `profilIrina()` dans `MainActivity` suffit à obtenir un tout autre
+écran, sans toucher à un seul composable.
+
+### Thème clair et thème sombre
 
 <p align="center">
   <img src="capture/ProfilAhmedClair.png" alt="Profil d'Ahmed, thème clair" width="300">
   <img src="capture/ProfilAhmedSombre.png" alt="Profil d'Ahmed, thème sombre" width="300">
-</p>
-
-### Irina
-
-<p align="center">
-  <img src="capture/ProfilIrinaClair.png" alt="Profil d'Irina, thème clair" width="300">
-  <img src="capture/ProfilIrinaSombre.png" alt="Profil d'Irina, thème sombre" width="300">
 </p>
 
 ## Quelles notions du chapitre Compose UI avez-vous réutilisées dans cette application ?
