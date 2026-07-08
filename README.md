@@ -97,9 +97,20 @@ app/src/main/java/com/example/profildeveloppeurv2/
 
 ## Aperçu
 
+Quatre captures, une par preview : les deux profils (Ahmed, Irina), chacun en thème clair et sombre.
+
+### Ahmed
+
 <p align="center">
-  <img src="capture/ProfilClair.png" alt="Profil développeur, thème clair" width="300">
-  <img src="capture/ProfilSombre.png" alt="Profil développeur, thème sombre" width="300">
+  <img src="capture/ProfilAhmedClair.png" alt="Profil d'Ahmed, thème clair" width="300">
+  <img src="capture/ProfilAhmedSombre.png" alt="Profil d'Ahmed, thème sombre" width="300">
+</p>
+
+### Irina
+
+<p align="center">
+  <img src="capture/ProfilIrinaClair.png" alt="Profil d'Irina, thème clair" width="300">
+  <img src="capture/ProfilIrinaSombre.png" alt="Profil d'Irina, thème sombre" width="300">
 </p>
 
 ## Quelles notions du chapitre Compose UI avez-vous réutilisées dans cette application ?
