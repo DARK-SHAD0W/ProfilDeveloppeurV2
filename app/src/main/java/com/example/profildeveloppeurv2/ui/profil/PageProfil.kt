@@ -57,5 +57,14 @@ fun PageProfil(
                 localisation = profil.localisation
             )
         }
+
+        item {
+            ActionPrincipale(
+                texte = "Télécharger le CV",
+                onClick = {
+                    // Callback vide : pas de vraie action pour ce devoir.
+                }
+            )
+        }
     }
 }
