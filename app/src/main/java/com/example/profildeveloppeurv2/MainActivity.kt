@@ -25,7 +25,8 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     PageProfil(
                         profil = profilAhmed(),
-                        //pour le deuxieme preview : profil = profilIrina(),
+                        //pour le deuxieme preview :
+                        //profil = profilIrina(),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
