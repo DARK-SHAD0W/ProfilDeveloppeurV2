@@ -28,22 +28,22 @@ fun PageProfilAhmedSombrePreview() {
 
 @Preview(
     showBackground = true,
-    name = "Sofia - Theme clair"
+    name = "Irina - Theme clair"
 )
 @Composable
-fun PageProfilSofiaClairPreview() {
+fun PageProfilIrinaClairPreview() {
     ProfilDeveloppeurV2Theme(darkTheme = false) {
-        PageProfil(profil = profilSofia())
+        PageProfil(profil = profilIrina())
     }
 }
 
 @Preview(
     showBackground = true,
-    name = "Sofia - Theme sombre"
+    name = "Irina - Theme sombre"
 )
 @Composable
-fun PageProfilSofiaSombrePreview() {
+fun PageProfilIrinaSombrePreview() {
     ProfilDeveloppeurV2Theme(darkTheme = true) {
-        PageProfil(profil = profilSofia())
+        PageProfil(profil = profilIrina())
     }
 }

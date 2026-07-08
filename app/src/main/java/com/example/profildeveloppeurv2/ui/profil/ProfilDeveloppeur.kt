@@ -97,10 +97,10 @@ fun profilAhmed(): ProfilDeveloppeur {
 
 // Second profil, fictif, pour montrer que l'ecran s'adapte a des donnees differentes
 // (comme les deux previews de l'ancienne CarteProfil).
-fun profilSofia(): ProfilDeveloppeur {
+fun profilIrina(): ProfilDeveloppeur {
     return ProfilDeveloppeur(
-        prenom = "Sofia",
-        nom = "Martin",
+        prenom = "Irina",
+        nom = "Karlovna",
         role = "Développeuse Full-Stack, freelance",
         description = "Développeuse freelance depuis 3 ans, à l'aise aussi bien côté serveur " +
             "que sur les interfaces web et mobiles. Disponible pour de nouvelles missions.",
@@ -121,7 +121,7 @@ fun profilSofia(): ProfilDeveloppeur {
                     "vers AWS pour une application SaaS."
             )
         ),
-        email = "sofia.martin@example.com",
+        email = "irina.karlovna@example.com",
         telephone = "+33 6 12 34 56 78",
         localisation = "Paris, France",
         disponibilite = "Non disponible actuellement",

@@ -53,7 +53,7 @@ Le thème (`ProfilDeveloppeurV2Theme`) personnalise les trois piliers de Materia
 - `Typography` : styles de texte personnalisés (`titleLarge`, `titleMedium`, `bodyMedium`,
   `labelLarge`, `labelMedium`) pour distinguer titres, textes et libellés.
 
-Quatre previews couvrent thème clair/sombre pour les deux profils du projet (Ahmed et Sofia), pour
+Quatre previews couvrent thème clair/sombre pour les deux profils du projet (Ahmed et Irina), pour
 vérifier que tout reste lisible dans les deux cas et avec des données différentes.
 
 ## Avatar
@@ -69,7 +69,7 @@ app/src/main/java/com/example/profildeveloppeurv2/
 ├── MainActivity.kt                     # Activity : thème + Scaffold
 └── ui/
     ├── profil/
-    │   ├── ProfilDeveloppeur.kt        # modèles de données + profilAhmed() / profilSofia()
+    │   ├── ProfilDeveloppeur.kt        # modèles de données + profilAhmed() / profilIrina()
     │   ├── PageProfil.kt               # écran principal, LazyColumn
     │   ├── EnTeteProfil.kt             # Row : avatar + identité
     │   ├── AvatarAvecBadge.kt          # Box : avatar en initiales + badge de statut
