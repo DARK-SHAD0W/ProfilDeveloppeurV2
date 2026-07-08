@@ -102,7 +102,7 @@ fun profilAhmed(): ProfilDeveloppeur {
         ),
         langues = listOf(
             Langue(nom = "Français", niveauLabel = "Bilingue", niveauEtoiles = 5),
-            Langue(nom = "Anglais", niveauLabel = "Courant (TOEIC C1)", niveauEtoiles = 4),
+            Langue(nom = "Anglais", niveauLabel = "Courant (TOEIC C1)", niveauEtoiles = 5),
             Langue(nom = "Arabe", niveauLabel = "Langue maternelle", niveauEtoiles = 5)
         )
     )
