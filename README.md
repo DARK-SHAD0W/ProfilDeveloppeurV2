@@ -1,89 +1,90 @@
 # Profil Développeur V2
 
-Amélioration UI de l'application « Profil développeur » : une fiche de profil développeur plus
-complète et plus professionnelle, construite avec Jetpack Compose. Cette version reprend et fait
-évoluer le projet [`Compose-Profil-Developpeur`](https://github.com/DARK-SHAD0W/Compose-Profil-Developpeur)
-(premier devoir, laissé intact pour sa propre notation) dans un tout nouveau dépôt, en réutilisant
-les notions vues dans le chapitre Compose UI : composants fondamentaux, layouts Compose, listes
+Version améliorée de l'application « Profil développeur », construite avec Jetpack Compose. Ce
+projet reprend et fait évoluer [`Compose-Profil-Developpeur`](https://github.com/DARK-SHAD0W/Compose-Profil-Developpeur)
+(le premier devoir, laissé intact pour sa propre notation) dans un nouveau dépôt. L'objectif était
+de réutiliser les notions du chapitre Compose UI : composants fondamentaux, layouts, listes
 modernes, cartes réutilisables, Material Design 3 et thème clair/sombre.
 
 Le profil affiché est celui d'Ahmed Yahya Letaief, développeur fullstack en alternance chez
-SOCOTEC.IO et étudiant en Master Architecture des Logiciels à l'ESGI Lyon — des données réelles,
-toutes locales (aucun appel réseau, aucune base de données).
+SOCOTEC.IO et étudiant en Master Architecture des Logiciels à l'ESGI Lyon. Les données sont réelles
+mais restent locales : pas d'appel réseau, pas de base de données, tout est écrit directement dans
+le code Kotlin.
 
-## Composants Compose fondamentaux utilisés
+## Composants Compose fondamentaux
 
-- `Text` — titres, descriptions, informations (nom, rôle, expériences, formations...)
-- `Button` — action principale ("Télécharger le CV")
-- `Icon` — accompagne les champs de contact (email, téléphone, localisation), le badge de statut
-  et les liens professionnels
-- `Image` — avatar placeholder, découpé en cercle
-- `Card` — regroupe chaque expérience/projet (`ProjectCard`) et chaque formation (`FormationCard`)
-- `OutlinedTextField` en lecture seule — email, téléphone et localisation dans `ZoneContact`
+- `Text` : titres, descriptions, informations (nom, rôle, expériences, formations...)
+- `Button` : action principale, "Télécharger le CV"
+- `Icon` : champs de contact, badge de statut, liens professionnels
+- `Image` : logo placeholder sur chaque carte de projet/expérience
+- `Card` : une carte par expérience (`ProjectCard`) et par formation (`FormationCard`)
+- `OutlinedTextField` en lecture seule : email, téléphone et localisation dans `ZoneContact`
 
-## Layouts utilisés
+## Layouts
 
-- `Column` — structure verticale de l'écran et de chaque section
-- `Row` — aligne l'avatar et l'identité du développeur (`EnTeteProfil`), et l'icône avec le libellé
-  de chaque lien professionnel
-- `Box` — superpose le badge de statut sur l'avatar (`AvatarAvecBadge`)
-- `Spacer` — espace entre l'avatar et le bloc identité
-- `Surface` — zones visuelles cohérentes avec le thème : puces de compétences, badge de statut,
-  zone de contact, liens professionnels
+- `Column` : structure verticale de l'écran et de chaque section
+- `Row` : avatar + identité du développeur (`EnTeteProfil`), icône + libellé de chaque lien
+- `Box` : superpose le badge de statut sur l'avatar (`AvatarAvecBadge`)
+- `Spacer` : espace entre l'avatar et le bloc identité
+- `Surface` : puces de compétences, badge de statut, zone de contact, liens professionnels
 
 ## Listes modernes (LazyColumn / LazyRow)
 
-L'écran entier (`PageProfil`) est une seule `LazyColumn` : elle contient aussi bien des éléments
-uniques (`item { ... }` pour l'en-tête, la description, les titres de section) que des collections
-(`items(...)` pour les expériences et les formations). C'est le même principe que pour un catalogue
-de produits : afficher un nombre variable d'éléments sans avoir à connaître leur nombre à l'avance,
-avec une carte réutilisable par élément (`ProjectCard`, `FormationCard`).
+L'écran entier (`PageProfil`) est une seule `LazyColumn`. Elle mélange des éléments uniques
+(`item { ... }` pour l'en-tête, la description, les titres de section) et des collections
+(`items(...)` pour les expériences et les formations) : même logique qu'un catalogue de produits,
+afficher un nombre variable d'éléments sans le connaître à l'avance, avec une carte réutilisable
+par élément.
 
-Deux `LazyRow` complètent l'écran pour des collections **horizontales** : la liste des compétences
-(`CompetencesSection`, une `CompetenceChip` par compétence) et la liste des liens professionnels
-(`LiensProfessionnelsSection`, une `LienProfessionnelChip` par lien). Utiliser une liste horizontale
-ici évite de saturer la hauteur de l'écran pour des éléments courts et répétitifs.
+Deux `LazyRow` gèrent les collections horizontales : les compétences (`CompetencesSection`, une
+`CompetenceChip` par compétence) et les liens professionnels (`LiensProfessionnelsSection`, une
+`LienProfessionnelChip` par lien). Le format horizontal évite de prendre trop de hauteur pour des
+éléments courts.
 
-## Choix de thème
+## Thème
 
-Le thème (`ProfilDeveloppeurV2Theme`) personnalise les trois piliers de Material Design 3 :
+Le thème (`ProfilDeveloppeurV2Theme`) personnalise les trois piliers de Material 3 :
 
-- **`ColorScheme`** : une palette claire et une palette sombre définies explicitement (`primary`,
-  `onPrimary`, `secondary`, `background`, `onBackground`, `surface`, `onSurface`), reprise du
-  thème construit dans les TP4-7 (Product Explorer) pour rester cohérente avec le reste du travail
-  du cours plutôt que d'introduire une nouvelle palette.
-- **`Shapes`** : des coins arrondis personnalisés (`small` à `extraLarge`), utilisés notamment par
-  les puces de compétences et le badge de statut.
-- **`Typography`** : une hiérarchie de styles personnalisée (`titleLarge`, `titleMedium`,
-  `bodyMedium`, `labelLarge`, `labelMedium`) pour distinguer clairement titres, textes et libellés.
+- `ColorScheme` : palette claire et sombre, bleu acier en couleur principale, vert sauge en
+  secondaire, or doux en tertiaire. C'est la palette du tout premier devoir, mais appliquée cette
+  fois à tous les rôles du thème (`background`, `surface`, `onPrimary`...) et pas seulement à
+  `primary`/`secondary`/`tertiary`.
+- `Shapes` : coins arrondis personnalisés, utilisés entre autres par les puces et le badge.
+- `Typography` : styles de texte personnalisés (`titleLarge`, `titleMedium`, `bodyMedium`,
+  `labelLarge`, `labelMedium`) pour distinguer titres, textes et libellés.
 
-Deux previews dédiées (`PageProfilClairPreview` et `PageProfilSombrePreview`) affichent le même
-écran dans les deux thèmes, pour vérifier que tout reste lisible dans les deux cas.
+Quatre previews couvrent thème clair/sombre pour les deux profils du projet (Ahmed et Sofia), pour
+vérifier que tout reste lisible dans les deux cas et avec des données différentes.
+
+## Avatar
+
+Plutôt qu'une photo, l'avatar affiche les initiales du développeur sur un cercle coloré (comme sur
+Gmail ou Slack). C'est généré directement à partir du prénom et du nom, ça marche pour n'importe
+quel profil, et ça évite de devoir stocker une vraie photo dans le projet.
 
 ## Structure du projet
 
 ```
 app/src/main/java/com/example/profildeveloppeurv2/
-├── MainActivity.kt                    # Activity : thème + Scaffold
+├── MainActivity.kt                     # Activity : thème + Scaffold
 └── ui/
     ├── profil/
-    │   ├── ProfilDeveloppeur.kt       # ProfilDeveloppeur, ExperienceProjet, LienProfessionnel,
-    │   │                               # Formation + profilAhmed() (données locales reelles)
-    │   ├── PageProfil.kt              # écran principal, LazyColumn
-    │   ├── EnTeteProfil.kt            # Row : avatar + identité
-    │   ├── AvatarAvecBadge.kt         # Box : avatar (Image) + badge de statut
-    │   ├── IdentiteDeveloppeur.kt     # nom + rôle
-    │   ├── CompetencesSection.kt      # CompetenceChip + LazyRow
-    │   ├── ProjectCard.kt             # carte réutilisable : expérience / projet
-    │   ├── FormationCard.kt           # carte réutilisable : diplôme / formation
-    │   ├── ZoneContact.kt             # OutlinedTextField en lecture seule (email, tél., lieu)
-    │   ├── LiensProfessionnelsSection.kt  # LienProfessionnelChip + LazyRow
-    │   ├── ActionPrincipale.kt        # bouton d'action principal
-    │   └── PageProfilPreview.kt       # previews claire et sombre
+    │   ├── ProfilDeveloppeur.kt        # modèles de données + profilAhmed() / profilSofia()
+    │   ├── PageProfil.kt               # écran principal, LazyColumn
+    │   ├── EnTeteProfil.kt             # Row : avatar + identité
+    │   ├── AvatarAvecBadge.kt          # Box : avatar en initiales + badge de statut
+    │   ├── IdentiteDeveloppeur.kt      # nom + rôle
+    │   ├── CompetencesSection.kt       # CompetenceChip + LazyRow
+    │   ├── ProjectCard.kt              # carte réutilisable : expérience / projet
+    │   ├── FormationCard.kt            # carte réutilisable : diplôme / formation
+    │   ├── ZoneContact.kt              # OutlinedTextField en lecture seule
+    │   ├── LiensProfessionnelsSection.kt   # LienProfessionnelChip + LazyRow
+    │   ├── ActionPrincipale.kt         # bouton d'action principal
+    │   └── PageProfilPreview.kt        # previews (2 profils x clair/sombre)
     └── theme/
-        ├── Color.kt                  # palettes claire / sombre
-        ├── Theme.kt                  # ColorScheme + Shapes personnalisées
-        └── Type.kt                   # Typography personnalisée
+        ├── Color.kt                   # palettes claire / sombre
+        ├── Theme.kt                   # ColorScheme + Shapes personnalisées
+        └── Type.kt                    # Typography personnalisée
 ```
 
 ## Aperçu
@@ -95,14 +96,13 @@ app/src/main/java/com/example/profildeveloppeurv2/
 
 ## Quelles notions du chapitre Compose UI avez-vous réutilisées dans cette application ?
 
-L'ensemble du chapitre : les composants fondamentaux (`Text`, `Button`, `Icon`, `Image`, `Card`,
-`OutlinedTextField`) pour afficher chaque information avec le bon niveau d'importance ; les layouts
-(`Column`, `Row`, `Box`, `Spacer`, `Surface`) pour structurer l'écran plutôt que d'empiler du texte
-brut ; les listes modernes (`LazyColumn`, `LazyRow`, `items`) pour afficher des collections de
-taille variable (compétences, expériences, formations, liens) avec des cartes réutilisables plutôt
-que des `Column` figées ; et Material Design 3 (`ColorScheme`, `Shapes`, `Typography`, thème
-clair/sombre) pour obtenir une identité visuelle cohérente sans redessiner chaque composant. C'est
-aussi ce dernier point qui a le plus changé par rapport à la première version : là où l'ancienne
-application posait une couleur de fond différente sur chaque `Surface` à la main, celle-ci passe
-par les rôles du thème (`primary`, `secondary`, `background`, `surface`...), ce qui rend
-l'ensemble cohérent et capable de s'adapter automatiquement au mode sombre.
+Un peu tout le chapitre. Les composants fondamentaux pour afficher chaque information avec le bon
+niveau d'importance, les layouts pour structurer l'écran au lieu d'empiler du texte, les listes
+modernes pour gérer un nombre variable d'éléments avec des cartes réutilisables plutôt que des
+`Column` figées, et Material Design 3 pour avoir une identité visuelle cohérente sans redessiner
+chaque composant à la main.
+
+Ce dernier point est ce qui a le plus changé par rapport à la première version. L'ancienne
+application posait une couleur de fond différente sur chaque `Surface`, choisie à la main. Celle-ci
+passe par les rôles du thème (`primary`, `secondary`, `background`, `surface`...), donc tout reste
+cohérent et s'adapte automatiquement au mode sombre sans rien retoucher.
