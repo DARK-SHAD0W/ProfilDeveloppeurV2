@@ -6,10 +6,10 @@ import com.example.profildeveloppeurv2.ui.theme.ProfilDeveloppeurV2Theme
 
 @Preview(
     showBackground = true,
-    name = "Profil - Theme clair"
+    name = "Ahmed - Theme clair"
 )
 @Composable
-fun PageProfilClairPreview() {
+fun PageProfilAhmedClairPreview() {
     ProfilDeveloppeurV2Theme(darkTheme = false) {
         PageProfil(profil = profilAhmed())
     }
@@ -17,11 +17,33 @@ fun PageProfilClairPreview() {
 
 @Preview(
     showBackground = true,
-    name = "Profil - Theme sombre"
+    name = "Ahmed - Theme sombre"
 )
 @Composable
-fun PageProfilSombrePreview() {
+fun PageProfilAhmedSombrePreview() {
     ProfilDeveloppeurV2Theme(darkTheme = true) {
         PageProfil(profil = profilAhmed())
+    }
+}
+
+@Preview(
+    showBackground = true,
+    name = "Sofia - Theme clair"
+)
+@Composable
+fun PageProfilSofiaClairPreview() {
+    ProfilDeveloppeurV2Theme(darkTheme = false) {
+        PageProfil(profil = profilSofia())
+    }
+}
+
+@Preview(
+    showBackground = true,
+    name = "Sofia - Theme sombre"
+)
+@Composable
+fun PageProfilSofiaSombrePreview() {
+    ProfilDeveloppeurV2Theme(darkTheme = true) {
+        PageProfil(profil = profilSofia())
     }
 }
