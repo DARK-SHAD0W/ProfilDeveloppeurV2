@@ -60,9 +60,8 @@ Mon thème (`ProfilDeveloppeurV2Theme`) personnalise les trois piliers de Materi
 - `ColorScheme` : palette claire et sombre, vert en couleur principale (repris du thème que j'avais
   fait au TP7 sur Product Explorer) et bleu standard en secondaire. J'ai défini explicitement tous
   les rôles utilisés dans l'appli, y compris les `Container` (`primaryContainer`,
-  `secondaryContainer`) et `surfaceVariant`. Sans ça, Material 3 retombe sur sa palette rose par
-  défaut dès qu'un composant utilise un rôle que je n'ai pas défini, ce qui m'a donné un rendu
-  incohérent au début, surtout en thème sombre.
+  `secondaryContainer`) et `surfaceVariant`, pour que le rendu reste cohérent partout, y compris en
+  thème sombre.
 - `Shapes` : des coins arrondis personnalisés, utilisés entre autres sur les puces et le badge.
 - `Typography` : des styles de texte personnalisés (`titleLarge`, `titleMedium`, `bodyMedium`,
   `labelLarge`, `labelMedium`) pour distinguer titres, textes et libellés.
@@ -147,10 +146,10 @@ avec un système cohérent. Ici je passe par les rôles du thème (`primary`, `s
 `background`, `surface`...), donc tout reste cohérent et s'adapte automatiquement au mode sombre
 sans que j'aie besoin de retoucher un seul composant. Ça m'a aussi appris un truc que je ne savais
 pas avant : si on utilise un rôle de couleur qu'on n'a pas défini soi-même (`primaryContainer`,
-`surfaceVariant`...), Material 3 ne prévient pas, il retombe silencieusement sur sa palette rose
-par défaut. Je suis tombé plusieurs fois sur ce problème en construisant cette version, et ça m'a
-obligé à comprendre vraiment comment `ColorScheme` fonctionne plutôt que de me contenter de définir
-`primary` et `secondary` et de considérer que c'était fini.
+`surfaceVariant`...), Material 3 retombe silencieusement sur des couleurs par défaut. Je suis tombé
+plusieurs fois sur ce problème en construisant cette version, et ça m'a obligé à comprendre
+vraiment comment `ColorScheme` fonctionne plutôt que de me contenter de définir `primary` et
+`secondary` et de considérer que c'était fini.
 
 J'ai aussi réutilisé des idées d'autres TP dans ce devoir : la notation en étoiles jaunes vient de
 `ProductRating` au TP4, la structure en `LazyColumn` avec `item`/`items` mélangés vient de l'écran
