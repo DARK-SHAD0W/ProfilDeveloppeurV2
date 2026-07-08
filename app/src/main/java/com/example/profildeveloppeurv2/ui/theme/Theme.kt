@@ -23,7 +23,9 @@ private val LightColorScheme = lightColorScheme(
     surface = SurfaceClaire,
     onSurface = OnSurfaceClaire,
     surfaceVariant = SurfaceVariantClaire,
-    onSurfaceVariant = OnSurfaceVariantClaire
+    onSurfaceVariant = OnSurfaceVariantClaire,
+    outline = OutlineClair,
+    outlineVariant = OutlineVariantClaire
 )
 
 private val DarkColorScheme = darkColorScheme(
@@ -40,7 +42,9 @@ private val DarkColorScheme = darkColorScheme(
     surface = SurfaceSombre,
     onSurface = OnSurfaceSombre,
     surfaceVariant = SurfaceVariantSombre,
-    onSurfaceVariant = OnSurfaceVariantSombre
+    onSurfaceVariant = OnSurfaceVariantSombre,
+    outline = OutlineSombre,
+    outlineVariant = OutlineVariantSombre
 )
 
 private val ProfilShapes = Shapes(

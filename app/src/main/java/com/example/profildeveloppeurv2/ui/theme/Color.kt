@@ -19,6 +19,8 @@ val SurfaceClaire = Color(0xFFFFFFFF)
 val OnSurfaceClaire = Color(0xFF191C1A)
 val SurfaceVariantClaire = Color(0xFFDDE4E1)
 val OnSurfaceVariantClaire = Color(0xFF414944)
+val OutlineClair = Color(0xFF71787E)
+val OutlineVariantClaire = Color(0xFFC1C9C4)
 
 // Palette sombre : mêmes rôles, contrastes pensés pour le mode sombre (containers foncés
 // et desatures, pas juste l'inverse des couleurs claires).
@@ -36,6 +38,8 @@ val SurfaceSombre = Color(0xFF1C211D)
 val OnSurfaceSombre = Color(0xFFE0E4DF)
 val SurfaceVariantSombre = Color(0xFF414944)
 val OnSurfaceVariantSombre = Color(0xFFC1C9C4)
+val OutlineSombre = Color(0xFF8B938D)
+val OutlineVariantSombre = Color(0xFF414944)
 
 // Fonds clairs utilisés directement sur des Surface, un par composable,
 // pour que chaque section de la fiche soit visuellement distincte.
