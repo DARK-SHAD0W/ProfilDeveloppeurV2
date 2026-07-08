@@ -45,10 +45,11 @@ Deux `LazyRow` gèrent les collections horizontales : les compétences (`Compete
 
 Le thème (`ProfilDeveloppeurV2Theme`) personnalise les trois piliers de Material 3 :
 
-- `ColorScheme` : palette claire et sombre, bleu acier en couleur principale, vert sauge en
-  secondaire, or doux en tertiaire. C'est la palette du tout premier devoir, mais appliquée cette
-  fois à tous les rôles du thème (`background`, `surface`, `onPrimary`...) et pas seulement à
-  `primary`/`secondary`/`tertiary`.
+- `ColorScheme` : palette claire et sombre, vert en couleur principale (repris du thème du TP7,
+  Product Explorer) et bleu standard en secondaire. Tous les rôles utilisés dans l'app sont
+  définis explicitement, y compris les `Container` (`primaryContainer`, `secondaryContainer`) et
+  `surfaceVariant` : sans ça, Material 3 retombe sur sa palette rose par défaut dès qu'un
+  composant utilise un rôle non défini, ce qui donnait un rendu incohérent, surtout en sombre.
 - `Shapes` : coins arrondis personnalisés, utilisés entre autres par les puces et le badge.
 - `Typography` : styles de texte personnalisés (`titleLarge`, `titleMedium`, `bodyMedium`,
   `labelLarge`, `labelMedium`) pour distinguer titres, textes et libellés.
