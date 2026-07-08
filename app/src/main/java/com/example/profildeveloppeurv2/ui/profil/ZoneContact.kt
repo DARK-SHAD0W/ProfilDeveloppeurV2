@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -19,6 +20,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ZoneContact(
     email: String,
+    telephone: String,
     localisation: String,
     modifier: Modifier = Modifier
 ) {
@@ -38,6 +40,16 @@ fun ZoneContact(
                 readOnly = true,
                 label = { Text("Email") },
                 leadingIcon = { Icon(Icons.Filled.Email, contentDescription = null) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp)
+            )
+            OutlinedTextField(
+                value = telephone,
+                onValueChange = {},
+                readOnly = true,
+                label = { Text("Téléphone") },
+                leadingIcon = { Icon(Icons.Filled.Phone, contentDescription = null) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 8.dp)

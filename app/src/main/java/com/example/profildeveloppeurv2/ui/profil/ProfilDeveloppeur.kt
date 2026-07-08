@@ -15,6 +15,7 @@ data class ProfilDeveloppeur(
     val competences: List<String>,
     val experiences: List<ExperienceProjet>,
     val email: String,
+    val telephone: String,
     val localisation: String,
     val disponibilite: String
 )
@@ -53,6 +54,7 @@ fun profilAhmed(): ProfilDeveloppeur {
             )
         ),
         email = "letaiefahmedyahya@gmail.com",
+        telephone = "+33 6 04 48 86 09",
         localisation = "Auvergne-Rhône-Alpes",
         disponibilite = "En alternance chez SOCOTEC.IO"
     )

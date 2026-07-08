@@ -54,6 +54,7 @@ fun PageProfil(
         item {
             ZoneContact(
                 email = profil.email,
+                telephone = profil.telephone,
                 localisation = profil.localisation
             )
         }
