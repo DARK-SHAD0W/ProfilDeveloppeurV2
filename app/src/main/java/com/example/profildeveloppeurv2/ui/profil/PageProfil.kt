@@ -60,6 +60,10 @@ fun PageProfil(
         }
 
         item {
+            LiensProfessionnelsSection(liens = profil.liensProfessionnels)
+        }
+
+        item {
             ActionPrincipale(
                 texte = "Télécharger le CV",
                 onClick = {

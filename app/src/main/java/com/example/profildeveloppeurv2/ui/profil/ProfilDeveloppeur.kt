@@ -7,6 +7,12 @@ data class ExperienceProjet(
     val description: String
 )
 
+// Un lien professionnel (reseau, code, portfolio), affiche via LienProfessionnelChip.
+data class LienProfessionnel(
+    val label: String,
+    val url: String
+)
+
 // Donnees completes du profil, remplace les parametres epars de l'ancienne CarteProfil.
 data class ProfilDeveloppeur(
     val nom: String,
@@ -17,7 +23,8 @@ data class ProfilDeveloppeur(
     val email: String,
     val telephone: String,
     val localisation: String,
-    val disponibilite: String
+    val disponibilite: String,
+    val liensProfessionnels: List<LienProfessionnel>
 )
 
 // Donnees locales reelles (voir CV), simulent une source de donnees pour ce devoir.
@@ -56,6 +63,11 @@ fun profilAhmed(): ProfilDeveloppeur {
         email = "letaiefahmedyahya@gmail.com",
         telephone = "+33 6 04 48 86 09",
         localisation = "Auvergne-Rhône-Alpes",
-        disponibilite = "En alternance chez SOCOTEC.IO"
+        disponibilite = "En alternance chez SOCOTEC.IO",
+        liensProfessionnels = listOf(
+            LienProfessionnel(label = "LinkedIn", url = "linkedin.com"),
+            LienProfessionnel(label = "GitHub", url = "github.com/DARK-SHAD0W"),
+            LienProfessionnel(label = "Portfolio", url = "portfolio")
+        )
     )
 }
