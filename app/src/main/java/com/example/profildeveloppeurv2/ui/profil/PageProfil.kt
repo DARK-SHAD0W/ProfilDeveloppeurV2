@@ -50,5 +50,12 @@ fun PageProfil(
         ) { experience ->
             ProjectCard(experience = experience)
         }
+
+        item {
+            ZoneContact(
+                email = profil.email,
+                localisation = profil.localisation
+            )
+        }
     }
 }
